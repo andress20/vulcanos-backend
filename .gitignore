@@ -1,0 +1,12 @@
+# dist
+dist/
+
+# dependencies
+node_modules/
+.env
+.vscode/
+yarn.lock
+
+# Docker
+
+yarn-error.log
