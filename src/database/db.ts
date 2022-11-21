@@ -36,6 +36,7 @@ const connect = async () => {
       await mongoose.disconnect();
     }
     console.log("Hey! be sure MongoDB is up");
+    // TODO: revisar porque se queda  como pegado aca
     await mongoose.connect(mongoURI, options);
     mongooConnection.isConnected = 1;
     console.log("Connected to MongoDB");
