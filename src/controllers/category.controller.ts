@@ -3,10 +3,8 @@ import Category from "../models/category.model";
 
 const create = async (req: any, res: any) => {
   try {
-    const { name, image } = req.body;
     const category = new Category({
-      name,
-      image,
+      ...req.body,
     });
     await category.save();
     res

@@ -17,6 +17,7 @@ const app = express();
 //   console.log(e);
 // }
 async function connectDB() {
+  console.log("Be sure MongoDB is up");
   const db = await mongoose.connect(
     "mongodb://localhost:27017/vulcanos-database"
   );

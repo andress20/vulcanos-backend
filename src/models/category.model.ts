@@ -5,6 +5,7 @@ import { Schema, model, Model } from "mongoose";
 interface Category {
   name: string;
   image: string;
+  products: any;
 }
 
 const categorySchema = new Schema<Category, Model<Category>>(
@@ -22,6 +23,7 @@ const categorySchema = new Schema<Category, Model<Category>>(
         type: String,
       },
     },
+    products: [{ type: Schema.Types.ObjectId, ref: "Product" }],
   },
   { timestamps: true }
 );

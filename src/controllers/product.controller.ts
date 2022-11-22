@@ -3,12 +3,9 @@ import Product from "../models/product.model";
 
 const create = async (req: any, res: any) => {
   try {
-    const { name, description, price, image, category } = req.body;
+    const { category } = req.body;
     const newProduct = new Product({
-      name,
-      description,
-      price,
-      image,
+      ...req.body,
       category,
     });
     await newProduct.save();
@@ -62,12 +59,10 @@ const remove = async (req: any, res: any) => {
 
   try {
     const deletedProduct = await Product.findByIdAndDelete(productId);
-    res
-      .status(200)
-      .json({
-        message: "product deleted successfully",
-        dataDeleted: deletedProduct,
-      });
+    res.status(200).json({
+      message: "product deleted successfully",
+      dataDeleted: deletedProduct,
+    });
   } catch (error) {
     res
       .status(400)
