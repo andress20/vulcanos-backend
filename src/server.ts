@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import config from "../config";
 
 // import { db } from "./database";
 
@@ -7,7 +8,7 @@ import productsRouter from "./routes/products"; // ESModules
 import categoriesRouter from "./routes/categories";
 // const express = require('express') => CommonJS
 
-const PORT = process.env.PORT || 8001;
+const PORT = config.PORT;
 
 const app = express();
 // try {
@@ -19,7 +20,8 @@ const app = express();
 async function connectDB() {
   console.log("Be sure MongoDB is up");
   const db = await mongoose.connect(
-    "mongodb://localhost:27017/vulcanos-database"
+    config.MONGO_URI
+    // "mongodb+srv://miguelAdmin:ufooQF12bxKuV1XS@vulcanos-pedidos.mvusfo9.mongodb.net/?retryWrites=true&w=majority"
   );
   console.log("connected to mongo", db.connection.db.databaseName);
 }
