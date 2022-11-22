@@ -7,6 +7,11 @@
       "MONGO_URI": "mongodb+srv://miguelAdmin:ufooQF12bxKuV1XS@vulcanos-pedidos.mvusfo9.mongodb.net/?retryWrites=true&w=majority"
     }
   },
+  "builds": [
+    {
+      "src": ".dist/src/index.js"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
