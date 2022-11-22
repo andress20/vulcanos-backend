@@ -1,11 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
-import config from "../config";
+import config from "./config";
 
 // import { db } from "./database";
 
-import productsRouter from "./routes/products"; // ESModules
-import categoriesRouter from "./routes/categories";
+import productsRouter from "./src/routes/products"; // ESModules
+import categoriesRouter from "./src/routes/categories";
 // const express = require('express') => CommonJS
 
 const PORT = config.PORT;
