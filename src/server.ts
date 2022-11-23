@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import config from "../config";
+import cors from "cors";
 
 // import { db } from "./database";
 
@@ -11,6 +12,7 @@ import categoriesRouter from "./routes/categories";
 const PORT = config.PORT;
 
 const app = express();
+
 // try {
 //   console.log("Trying connect MongoDB");
 //   db.connect();
@@ -25,6 +27,11 @@ async function connectDB() {
 connectDB();
 
 app.use(express.json()); // middleware to transform req.body to json
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.get("/", (_req, res) => {
   res.send("Welcome to Vulcanos Bakery API");

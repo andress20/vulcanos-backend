@@ -6,8 +6,8 @@ WORKDIR /usr/src/app
 
 ENV NODE_ENV=Development
 ENV PORT=8000
-# ENV MONGO_URI=mongodb://localhost:27017/vulcanos-database
-ENV MONGO_URI=mongodb+srv://miguelAdmin:ufooQF12bxKuV1XS@vulcanos-pedidos.mvusfo9.mongodb.net/?retryWrites=true&w=majority
+ENV MONGO_URI=mongodb://localhost:27017/vulcanos-database
+# ENV MONGO_URI=mongodb+srv://miguelAdmin:ufooQF12bxKuV1XS@vulcanos-pedidos.mvusfo9.mongodb.net/?retryWrites=true&w=majority
 
 
 COPY package.json .
